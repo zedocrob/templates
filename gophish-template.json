@@ -1,0 +1,45 @@
+{		
+	"version": "2",
+	"templates": [
+		{
+			"categories": [
+				"Security Simulation",
+			],
+			"description": "Gophish is an open-source phishing toolkit designed for businesses and penetration testers. It provides the ability to quickly and easily setup and execute phishing engagements and security awareness training.",
+						"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"set": "gophish",
+					"label": "CONTEXT_PATH",
+					"name": "CONTEXT_PATH"
+				}
+			],
+			"logo": "https://github.com/SelfhostedPro/selfhosted_templates/blob/master/Images/gophish.png",
+			"name": "GoPhish",
+			"platform": "linux",
+			"ports": [
+				"3333:3333/tcp,
+				"8080:8080/tcp,
+				"8443:8443/tcp,
+			],
+			"restart_policy": "unless-stopped",
+			"title": "GoPhish",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/srv/dev-disk-by-label-media/Files/AppData/Config/gophish"
+					"container": "/config",
+				}
+			]
+		}
+	]
+}
